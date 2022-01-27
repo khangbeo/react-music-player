@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect, useRef } from "react";
 import AudioControls from "./AudioControls";
 import Backdrop from "./Backdrop";
