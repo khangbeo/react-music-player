@@ -60,6 +60,8 @@ export default function AudioPlayer({ tracks }) {
             audioRef.current.play()
             setIsPlaying(true)
             startTimer()
+        } else {
+            isReady.current = true
         }
     }, [trackIndex])
 
@@ -118,7 +120,7 @@ export default function AudioPlayer({ tracks }) {
                     style={{ background: trackStyling }}
                 />
             </div>
-            <Backdrop 
+            <Backdrop
                 trackIndex={trackIndex}
                 activeColor={color}
                 isPlaying={isPlaying}
