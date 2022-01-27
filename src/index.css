@@ -1,3 +1,17 @@
+:root {
+  --white: #fff;
+  --active-color: #00aeb0;
+}
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  background: var(--active-color);
+  transition: background 0.4s ease;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
