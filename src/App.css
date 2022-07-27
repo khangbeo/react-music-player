@@ -6,11 +6,14 @@ button {
 
 .audio-player {
   max-width: 350px;
+  width: 300px;
   border-radius: 20px;
-  padding: 24px;
+  padding: 30px;
   box-shadow: 0 28px 28px rgba(0, 0, 0, 0.2);
   margin: auto;
-  color: var(--white)
+  color: #d0d48e;
+  background: #6e4269;
+  opacity: 0.9;
 }
 
 .artwork {
@@ -40,7 +43,7 @@ button {
 .audio-controls {
   display: flex;
   justify-content: space-between;
-  width: 75%;
+  width: 100%;
   margin: 0 auto 15px;
 }
 
@@ -57,22 +60,21 @@ button {
 }
 
 .audio-controls path {
-  fill: var(--white)
+  fill: #d0d48e;
 }
 
-input[type=range] {
+input[type="range"] {
   height: 5px;
   -webkit-appearance: none;
   width: 100%;
   margin-bottom: 10px;
   border-radius: 8px;
-  background: #3b7677;
+  background: #d0d48e;
   transition: background 0.2s ease;
   cursor: pointer;
 }
 
 .color-backdrop {
-  background: linear-gradient(45deg, var(--active-color) 20%, transparent 100%) no-repeat;
   position: absolute;
   top: 0;
   left: 0;

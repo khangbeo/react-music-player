@@ -1,10 +1,10 @@
-import './App.css';
-import AudioPlayer from './components/AudioPlayer';
-import tracks from './tracks';
+import "./App.css";
+import AudioPlayer from "./components/AudioPlayer";
+import tracks from "./tracks";
 
 function App() {
   return (
-    <div className="App">
+    <div className="container">
       <AudioPlayer tracks={tracks} />
     </div>
   );
