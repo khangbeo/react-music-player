@@ -1,0 +1,9 @@
+# Netlify deploy config. The site was created in the Create React App era and
+# still points at Node 16 and the CRA "build" folder; these settings override
+# that so the Vite build deploys correctly.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
