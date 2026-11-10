@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# minami — Album Player
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A single-album music player: seven tracks by **minami**, one cover image, nothing else.
 
-## Available Scripts
+Originally built in 2022 with Create React App and React 17. Modernized in 2026 to
+**Vite + React 19**, keeping the same album files (`src/assets/resources/songs/`) and the
+same cover (`src/assets/resources/images/Image0001.JPG`).
 
-In the project directory, you can run:
+## Tracklist
 
-### `npm start`
+1. Oriental Power Shooter
+2. Backstreet Girls
+3. Spring Bloomer
+4. 9190
+5. Fly with the Wild Wind
+6. Into the Darkness
+7. Rainy Day
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## What changed in the modernization
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Vite + React 19 replaces Create React App + React 17 (root `index.html`, `src/main.jsx`)
+- Clickable tracklist with a playing indicator, instead of next/prev only
+- Shuffle and repeat (off / all / one)
+- Volume control with mute, remembered between visits, along with the last track played
+- Seek bar driven by real audio events (`loadedmetadata` / `timeupdate`). The original
+  polled `currentTime` on a 1-second interval and passed the audio object itself as the
+  progress bar's `max`, so the bar never had a real duration.
+- Prev restarts the song when pressed more than 3 seconds in, like modern players
+- Media Session API support, so lock-screen and headset controls work
+- Spacebar play/pause, dark responsive layout, artwork that slowly spins while playing
 
-### `npm test`
+## Run it
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+npm install
+npm run dev    # local dev server
+npm run build  # production build into dist/
+```
